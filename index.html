@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="main-container">
+            <h1>My Library</h1>
+            <div>
+                <button id="new-book"> New Book </button>
+                <button id="save"> Save </button>
+            </div>
+            <div class="input-wrapper">
+                <div class="input">
+                    <h2>Title</h2>
+                    <input id="title" placeholder="Title" required>
+                </div>
+                <div class="input">
+                    <h2>Author</h2>
+                    <input id="author" placeholder="Author" required>
+                </div>
+                <div class="input">
+                    <h2>Number of Pages</h2>
+                    <input id="pages" placeholder="Number of Pages" type="number" required>
+                </div>
+                <div class="input">
+                    <h2>Have You Read This Book?</h2>
+                    <input id="read" type="checkbox">
+                </div>
+                <div class="input" id="submit-input">
+                    <button id="submit">Submit</button>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <div class="filter" data-key="0" data-type="title">
+                        Title
+                        <div class="triangle-container">
+                            <div class="triangle-up"></div>
+                            <div class="triangle-down"></div>
+                        </div>
+                    </div>
+                    <div class="filter" data-key="0" data-type="author">
+                        Author
+                        <div class="triangle-container">
+                            <div class="triangle-up"></div>
+                            <div class="triangle-down"></div>
+                        </div>
+                    </div>
+                    <div class="filter" data-key="0" data-type="pages">
+                        Pages
+                        <div class="triangle-container">
+                            <div class="triangle-up"></div>
+                            <div class="triangle-down"></div>
+                        </div>
+                    </div>
+                    <div class="filter" data-key="0" data-type="read">
+                        Read Status
+                        <div class="triangle-container">
+                            <div class="triangle-up"></div>
+                            <div class="triangle-down"></div>
+                        </div>
+                    </div>
+                    <div></div>
+                </li>
+            </ul>
+            <ul id="list">
+                <!-- Library Populates Here -->
+            </ul>
+        </div>
+    </div>
+    <script src="index.js" async defer></script>
+
+</body>
+
+</html>
