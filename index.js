@@ -8,7 +8,11 @@ const listContainer = document.querySelector("#list");
 
 window.onload = function() {
     loadFromLocal();
-    generateLibrary();
+    if (myLibrary) {
+        generateLibrary();
+    } else {
+        return;
+    }
 }
 
 function newBook(title, author, pages, read, time) {
