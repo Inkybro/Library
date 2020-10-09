@@ -1,4 +1,4 @@
-let myLibrary = [];
+var myLibrary = [];
 const inputField = document.querySelector(".input-wrapper");
 const titleField = document.querySelector("#title");
 const authorField = document.querySelector("#author");
@@ -11,7 +11,7 @@ window.onload = function() {
     if (myLibrary) {
         generateLibrary();
     } else {
-        return;
+        myLibrary = [];
     }
 }
 
