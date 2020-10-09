@@ -1,4 +1,4 @@
-var myLibrary = [];
+var myLibrary;
 const inputField = document.querySelector(".input-wrapper");
 const titleField = document.querySelector("#title");
 const authorField = document.querySelector("#author");
@@ -15,6 +15,7 @@ window.onload = function() {
     }
 }
 
+
 function newBook(title, author, pages, read, time) {
     this.title = title;
     this.author = author;
@@ -29,12 +30,18 @@ newEntry.onclick = function showInput() {
     inputField.style.visibility = "visible";
 }
 
-//save to local storage
+//save and load to local storage
 var myStorage = window.localStorage;
 const storeLib = document.querySelector('#save');
-storeLib.onclick = function storeLibrary() {
-    myStorage.setItem("library", JSON.stringify(myLibrary));
+
+function storeLibrary() {
+    if (myLibrary) {
+        myStorage.clear();
+        myStorage.setItem("library", JSON.stringify(myLibrary));
+    }
 }
+storeLib.addEventListener("click", storeLibrary());
+
 
 function loadFromLocal() {
     myLibrary = JSON.parse(myStorage.getItem("library"));
@@ -53,6 +60,7 @@ submitEntry.onclick = function addBookToLibrary() {
     }
 
     generateLibrary();
+    storeLibrary();
 }
 
 //Generate HTML from Library Array
@@ -96,6 +104,7 @@ function generateLibrary() {
                 return book != null && book != '';
             });
             generateLibrary();
+            storeLibrary();
         }
     }
 
